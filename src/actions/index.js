@@ -1,6 +1,9 @@
-export const simpleAction = () => dispatch => {
- dispatch({
-  type: 'SIMPLE_ACTION',
-  payload: 'result_of_simple_action'
- })
-}
+const THROW = "THROW";
+
+export const throwHand = (thrown) => ({    
+  type: THROW,
+  thrown: thrown
+})
+
+
+

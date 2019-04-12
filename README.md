@@ -1,7 +1,17 @@
 # Outline / TO DO
-1.  Add interface for Player hand and CPU hand
-2.  Add buttons for rock paper scissors
+1.  ~~add interface for Player hand and CPU hand~~
+    * ~~Create a component that displays ROCK PAPER SCISSORS~~
+    * ~~Add the component to the center top and bottom of the app~~
+
+2.  ~~Add buttons for rock paper scissors~~
+    * ~~create a component for the buttons~~
+    * ~~add the buttons to the bottom of the page~~
+
 3.  Add functions to change the player hand based on the button clicked
+    * add state for the playerhand
+    * change the playerhand component to display the state of playerhand
+    * make the throw buttons change the playerhand state
+
 4.  When a move is thrown throw a move for the CPU
 5.  Add scoreboard for win loss
 6.  Update the scoreboard after each throw

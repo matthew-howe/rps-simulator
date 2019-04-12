@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from '../logo.svg';
-import '../App.css';
-import { simpleAction } from '../actions';
-
+import './App.css';
+import PlayerHand from './components/PlayerHand';
+import { CpuHand } from './components/CpuHand';
+import Throw from './components/Throw';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <button></button>
+      <div className="game">
+        <CpuHand />
+        <PlayerHand />
+        <Throw />
       </div>
           );
   }
@@ -19,9 +21,7 @@ const mapStateToProps = state => ({
   ...state,
 });
 
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction()),
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(
   mapStateToProps,
