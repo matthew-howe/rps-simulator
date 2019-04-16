@@ -4,17 +4,21 @@
     * ~~Add the component to the center top and bottom of the app~~
 
 2.  ~~Add buttons for rock paper scissors~~
-    * ~~create a component for the buttons~~
-    * ~~add the buttons to the bottom of the page~~
+    * ~~Create a component for the buttons~~
+    * ~~Add the buttons to the bottom of the page~~
 
-3.  Add functions to change the player hand based on the button clicked
-    * add state for the playerhand
-    * change the playerhand component to display the state of playerhand
-    * make the throw buttons change the playerhand state
+3.  ~~Add functions to change the player hand based on the button clicked~~
+    * ~~Add state for the playerhand~~
+    * ~~Change the playerhand component to display the state of playerhand~~
+    * ~~Make the throw buttons change the playerhand state~~
 
-4.  When a move is thrown throw a move for the CPU
-5.  Add scoreboard for win loss
-6.  Update the scoreboard after each throw
+4.  ~~When a move is thrown throw a move for the CPU~~
+    * ~~Make the cpuHand state randomly choose a weapon when we throw~~
+5.  ~~Add scoreboard for win loss~~
+    * ~~Create a Scoreboard component~~
+    * ~~Update the scoreboard on each throw to display the score~~
+
+6.  ~~Update the scoreboard after each throw~~
 7.  Add a line graph that ascends for wins and descends for losses
 8.  Add a sidebar that shows balance and wager(input)
 9.  Change the balance for each throw based on the wager and won/loss

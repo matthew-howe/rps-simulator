@@ -12,7 +12,7 @@ class PlayerHand extends Component {
 }
 
 const mapStateToProps = state => {
-  return { playerHand: state.playerHand }
+  return { playerHand: state.game.playerHand }
 }
 
 export default connect(mapStateToProps, null)(PlayerHand)
