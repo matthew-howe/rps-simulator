@@ -5,6 +5,7 @@
   text-align: center;
 }
 
-LineChart{
-  margin: 0 auto;
+.app {
+  display: flex;
+  flex-direction: row;
 }

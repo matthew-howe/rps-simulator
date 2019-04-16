@@ -1,5 +1,6 @@
 const THROW = "THROW";
 const SET_SCORES = "SET_SCORES"
+const SET_WAGER = "SET_WAGER"
 
 export const throwHand = (weapon) => ({    
   type: THROW,
@@ -7,8 +8,7 @@ export const throwHand = (weapon) => ({
   thrown: true
 })
 
-export const setScores = (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData) => {
-  let date = Date.now() % 12
+export const setScores = (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager) => {
   if ( (playerHand === 'ROCK'     && cpuHand === 'SCISSORS') ||
        (playerHand === 'PAPER'    && cpuHand === 'ROCK') ||
     (playerHand === 'SCISSORS' && cpuHand === 'PAPER') ) {
@@ -18,7 +18,8 @@ export const setScores = (playerHand, cpuHand, playerScore, cpuScore, gamesPlaye
       cpuScore: cpuScore,
       thrown: false,
       gamesPlayed: gamesPlayed + 1,
-      chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: playerScore - cpuScore})
+      chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: balance + wager}),
+      balance: balance + wager,
     }
   }
     if ( (playerHand === 'PAPER' && cpuHand === 'SCISSORS') ||
@@ -30,7 +31,8 @@ export const setScores = (playerHand, cpuHand, playerScore, cpuScore, gamesPlaye
         cpuScore: cpuScore + 1,
         thrown: false,
         gamesPlayed: gamesPlayed + 1,
-        chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: playerScore - cpuScore})
+        chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: balance - wager}),
+        balance: balance - wager
       }
     }
     return {
@@ -39,9 +41,16 @@ export const setScores = (playerHand, cpuHand, playerScore, cpuScore, gamesPlaye
       cpuScore: cpuScore,
       thrown: false,
       gamesPlayed: gamesPlayed + 1,
-      chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: playerScore - cpuScore})
+      chartData: Object.assign({}, chartData, {[gamesPlayed + 1]: balance}),
+      balance: balance
     }
 }
+
+export const setWager = (wager) => ({
+  type: SET_WAGER,
+  wager: wager
+})
+
 
 
 

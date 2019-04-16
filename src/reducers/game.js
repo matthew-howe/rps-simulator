@@ -5,7 +5,10 @@ const initialState = {
   playerScore: 0,
   cpuScore: 0,
   chartData: {"1": 5, "2": 6},
-  gamesPlayed: 0
+  gamesPlayed: 0,
+  balance: 0,
+  wager: 50,
+  roi: 0,
 }
 
 const game = (state = initialState, action) => {
@@ -23,7 +26,12 @@ const game = (state = initialState, action) => {
         cpuScore: action.cpuScore,
         thrown: action.thrown,
         gamesPlayed: action.gamesPlayed,
-        chartData: action.chartData 
+        chartData: action.chartData,
+        balance: action.balance,
+      })
+    case 'SET_WAGER':
+      return Object.assign({}, state, {
+        wager: action.wager
       })
     default:
       return state

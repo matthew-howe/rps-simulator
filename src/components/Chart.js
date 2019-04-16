@@ -16,10 +16,17 @@ class Chart extends React.Component {
       <div className="chart">
         <LineChart 
           data={[
-  {"name":"Games Won", "data": this.props.chartData},
-]}
+            // {"name":"Games Won", "data": this.props.chartData},
+            {"name":"Balance", "data": this.props.chartData}
+          ]}
+          pointStyle={"line"}
           height={200}
           width={700}
+          min={0}
+          xtitle={"Games Played"}
+          ytitle={"PROFIT"}
+          prefix="$"
+          thousands=","
         />
       </div>
     )
@@ -30,7 +37,8 @@ class Chart extends React.Component {
 
 const mapStateToProps = state => ({
   chartData: state.game.chartData,
-  gamesPlayed: state.game.gamesPlayed
+  gamesPlayed: state.game.gamesPlayed,
+  balance: state.game.balance
 })
 
 export default connect(mapStateToProps)(Chart)

@@ -19,9 +19,17 @@
     * ~~Update the scoreboard on each throw to display the score~~
 
 6.  ~~Update the scoreboard after each throw~~
-7.  Add a line graph that ascends for wins and descends for losses
-8.  Add a sidebar that shows balance and wager(input)
+
+7.  ~~Add a line graph that ascends for wins and descends for losses~~
+
+
+8.  ~~Add a sidebar that shows balance and wager(input)~~
+    * ~~Add balance and wager display to sidebar component~~
+
 9.  Change the balance for each throw based on the wager and won/loss
+    * Add state for balance and wager
+    * Change the balance based on the wager for each throw
+
 10. Add a profit display based on the change in balance
 11. Change the graph to display the current profit per throw
 12. Add a ROI display

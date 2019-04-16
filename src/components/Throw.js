@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { throwHand, setScores } from '../actions';
+import { throwHand, setScores, setWager } from '../actions';
 
 
 class Throw extends Component {
@@ -10,7 +10,7 @@ class Throw extends Component {
     if (this.props.thrown === true) {
       this.props.setScores(this.props.playerHand, this.props.cpuHand,
         this.props.playerScore, this.props.cpuScore,
-      this.props.gamesPlayed, this.props.chartData)
+      this.props.gamesPlayed, this.props.chartData, this.props.balance, this.props.wager)
     }
   }
 
@@ -32,7 +32,9 @@ const mapStateToProps = state => ({
   cpuScore: state.game.cpuScore,
   thrown: state.game.thrown,
   gamesPlayed: state.game.gamesPlayed,
-  chartData: state.game.chartData
+  chartData: state.game.chartData,
+  wager: state.game.wager,
+  balance: state.game.balance
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -40,8 +42,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     throwHand: (weapon) => {
       dispatch(throwHand(weapon))    
     },
-    setScores: (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData) => {
-      dispatch(setScores(playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData))
+    setScores: (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager) => {
+      dispatch(setScores(playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager))
+    },
+    setWager: (wager) => {
+      dispatch(setWager(wager))
     }
   }
 }
