@@ -20,7 +20,7 @@ class Chart extends React.Component {
             {"name":"Balance", "data": this.props.chartData}
           ]}
           pointStyle={"line"}
-          height={200}
+          height={400}
           width={700}
           min={-500}
           xtitle={"Games Played"}

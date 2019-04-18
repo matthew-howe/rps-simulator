@@ -37,7 +37,7 @@
 ~~12?~~ Add a ROI display
 ~~13?~~ Add a display for the total winning for each rock/paper/scissors
 ~~14?~~ Add lines to the graph for r/p/s winnings
-~~15?~~ Add a standard deviation display
+~~15?~~; Add a standard deviation display
 ///////////////////////////////////////////////////////////////////
 16. Add input forms for the CPU rock%/paper%/scissors%
 17. Adjust the CPU strategy to reflect the values in the forms
