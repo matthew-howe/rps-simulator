@@ -22,7 +22,7 @@ class Chart extends React.Component {
           pointStyle={"line"}
           height={200}
           width={700}
-          min={0}
+          min={-500}
           xtitle={"Games Played"}
           ytitle={"PROFIT"}
           prefix="$"
