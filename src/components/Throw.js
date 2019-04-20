@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { throwHand, setScores, setWager } from '../actions';
+import { throwHand, setScores, setWager, autoThrow, setChart } from '../actions';
 
 
 class Throw extends Component {
@@ -17,9 +17,19 @@ class Throw extends Component {
   render () {
     return (
       <div>
-        <button onClick={() => this.props.throwHand('ROCK')}>ROCK</button>
-        <button onClick={() => this.props.throwHand('PAPER')}>PAPER</button>
-        <button onClick={() => this.props.throwHand('SCISSORS')}>SCISSORS</button>
+        <button id="1" onClick={() => this.props.throwHand('ROCK')}>ROCK</button>
+        <button id="2" onClick={() => this.props.throwHand('PAPER')}>PAPER</button>
+        <button id="3" onClick={() => this.props.throwHand('SCISSORS')}>SCISSORS</button>
+        <br />
+        <br />
+        <button onClick={() => {
+          for (let i = 0; i < 500; i++) {
+            document.getElementById(["1","2","3"][Math.floor(Math.random() * 3)]).click();
+          }
+        }
+        }>
+          SIMULATE
+        </button>
       </div>
     )
   }
@@ -35,7 +45,8 @@ const mapStateToProps = state => ({
   chartData: state.game.chartData,
   wager: state.game.wager,
   balance: state.game.balance,
-  gameHistory: state.game.gameHistory
+  gameHistory: state.game.gameHistory,
+  chart: state.game.chart
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -48,6 +59,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     setWager: (wager) => {
       dispatch(setWager(wager))
+    },
+    autoThrow: () => {
+      dispatch(autoThrow())
+    },
+    setChart: (handType, gameHistory, chart, gamesPlayed) => {
+      dispatch(setChart(handType, gameHistory, chart, gamesPlayed))
     }
   }
 }

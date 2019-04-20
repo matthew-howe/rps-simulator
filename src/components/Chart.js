@@ -17,10 +17,21 @@ class Chart extends React.Component {
           data={[
             // {"name":"Games Won", "data": this.props.chartData},
             {
-              "name":"Winnings", "data": this.props.chartData,
-              "color": 'green', "points": false, "library": {"lineTension": 0}}               
-              
-            
+              "name":"Total Winnings", "data": this.props.chartData,
+              "color": 'green', "points": false, "library": {"lineTension": 0}
+            },
+            {
+              "name":"Rock Winnings", "data": this.props.chart.rockChart,
+              "color": 'red', "points": false, "library": {"lineTension": 0}
+            },
+            {
+              "name":"Paper Winnings", "data": this.props.chart.paperChart,
+              "color": 'yellow', "points": false, "library": {"lineTension": 0}
+            },
+            {
+              "name":"Scissor Winnings", "data": this.props.chart.scissorsChart,
+              "color": 'blue', "points": false, "library": {"lineTension": 0}
+            },
           ]}
           pointStyle={"line"}
           height={400}
@@ -42,7 +53,8 @@ class Chart extends React.Component {
 const mapStateToProps = state => ({
   chartData: state.game.chartData,
   gamesPlayed: state.game.gamesPlayed,
-  balance: state.game.balance
+  balance: state.game.balance,
+  chart: state.game.chart
 })
 
 export default connect(mapStateToProps)(Chart)
