@@ -4,7 +4,7 @@ const initialState = {
   thrown: false,
   playerScore: 0,
   cpuScore: 0,
-  chartData: { '1': 5, '2': 6 },
+  chartData: { '0': 0, '1': 0 },
   gamesPlayed: 0,
   balance: 0,
   wager: 50,
