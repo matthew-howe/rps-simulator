@@ -8,7 +8,6 @@ ReactChartkick.addAdapter(ChartJS)
 
 class Chart extends React.Component {
 
-
   render() {
     console.log('chart props', this.props)
     
@@ -17,12 +16,17 @@ class Chart extends React.Component {
         <LineChart 
           data={[
             // {"name":"Games Won", "data": this.props.chartData},
-            {"name":"Balance", "data": this.props.chartData}
+            {
+              "name":"Winnings", "data": this.props.chartData,
+              "color": 'green', "points": false, "library": {"lineTension": 0}}               
+              
+            
           ]}
           pointStyle={"line"}
           height={400}
           width={700}
-          min={-500}
+          // max={1000}
+          // min={-500}
           xtitle={"Games Played"}
           ytitle={"PROFIT"}
           prefix="$"

@@ -4,12 +4,7 @@ import { setRock, setPaper, setScissors } from '../actions/player'
 
 class PlayerForm extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      rock: 33,
-      paper: 33,
-      scissors: 33,
-    };
+    super(props); 
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -29,7 +24,7 @@ class PlayerForm extends React.Component {
         this.props.setScissors(value)
         break;
       default:
-        console.log('player input error')
+        console.log('player input erro-r')
     }
     
   }

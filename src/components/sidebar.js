@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CpuForm from './CpuForm';
 import PlayerForm from './PlayerForm';
+import WagerForm from './WagerForm';
 
 class Sidebar extends Component {
   
@@ -17,7 +18,7 @@ class Sidebar extends Component {
         Balance: ${this.props.balance}
       </div>
       <div className="wager">
-        Wager: ${this.props.wager}
+        <WagerForm />
       </div>
       <br />
       <div className={"cpu-strategy"}>

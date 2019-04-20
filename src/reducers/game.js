@@ -9,6 +9,12 @@ const initialState = {
   balance: 0,
   wager: 50,
   roi: 0,
+  ROCK: 0,
+  PAPER: 0, 
+  SCISSORS: 0,
+  standardDev: 0,
+  expectedValue: 0,
+  gameHistory: []
 }
 
 const game = (state = initialState, action) => {

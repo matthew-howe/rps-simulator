@@ -10,7 +10,7 @@ class Throw extends Component {
     if (this.props.thrown === true) {
       this.props.setScores(this.props.playerHand, this.props.cpuHand,
         this.props.playerScore, this.props.cpuScore,
-      this.props.gamesPlayed, this.props.chartData, this.props.balance, this.props.wager)
+      this.props.gamesPlayed, this.props.chartData, this.props.balance, this.props.wager, this.props.gameHistory)
     }
   }
 
@@ -34,7 +34,8 @@ const mapStateToProps = state => ({
   gamesPlayed: state.game.gamesPlayed,
   chartData: state.game.chartData,
   wager: state.game.wager,
-  balance: state.game.balance
+  balance: state.game.balance,
+  gameHistory: state.game.gameHistory
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -42,8 +43,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     throwHand: (weapon) => {
       dispatch(throwHand(weapon))    
     },
-    setScores: (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager) => {
-      dispatch(setScores(playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager))
+    setScores: (playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager, gameHistory) => {
+      dispatch(setScores(playerHand, cpuHand, playerScore, cpuScore, gamesPlayed, chartData, balance, wager, gameHistory))
     },
     setWager: (wager) => {
       dispatch(setWager(wager))
