@@ -133,7 +133,6 @@ export const setWager = wager => ({
 });
 
 export const setChart = (handType, gameHistory, chart, gamesPlayed) => {
-  console.log('set chart running args', handType, gameHistory, chart, gamesPlayed );
   const oldGamesPlayed = gamesPlayed - 1;
   const newRockChart = gameHistory[gameHistory.length - 1].won
             ? Object.assign({}, chart.rockChart, {
@@ -170,7 +169,6 @@ export const setChart = (handType, gameHistory, chart, gamesPlayed) => {
                   chart.scissorsChart[oldGamesPlayed] -
                   gameHistory[gameHistory.length - 1].wager,
               })
-  console.log(newRockChart, newPaperChart, newScissorsChart)
 
   if (gameHistory[gameHistory.length - 1].tie) {
     return Object.assign(
@@ -237,5 +235,7 @@ export const setChart = (handType, gameHistory, chart, gamesPlayed) => {
         },
         { type: SET_CHART }
       );
+    default:
+      console.log('error in setChart switch function')
   }
 };

@@ -9,7 +9,6 @@ ReactChartkick.addAdapter(ChartJS)
 class Chart extends React.Component {
 
   render() {
-    console.log('chart props', this.props)
     
     return (
       <div className="chart">

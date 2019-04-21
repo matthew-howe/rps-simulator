@@ -7,7 +7,7 @@ const initialState = {
   chartData: { '0': 0, '1': 0 },
   gamesPlayed: 0,
   balance: 0,
-  wager: 50,
+  wager: 5000,
   roi: 0,
   totalInvested: 0,
   chart: {
@@ -25,7 +25,6 @@ const initialState = {
 };
 
 const game = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case 'THROW':
       return Object.assign({}, state, {

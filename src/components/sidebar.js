@@ -7,10 +7,7 @@ import { setChart } from '../actions';
 
 class Sidebar extends Component {
   componentDidUpdate() {
-    console.log('sidebar props', this.props)
-    console.log('setchart scoreset', this.props.scoreSet)
     if (this.props.scoresSet) {
-      console.log(this.props.scoreSet, 'should be true')
       this.props.setChart(
         this.props.gameHistory[this.props.gameHistory.length - 1].playerhand,
         this.props.gameHistory,
@@ -30,8 +27,7 @@ class Sidebar extends Component {
           <br />
           CPU: {this.props.cpuScore}
         </div>
-        <div className="balance">Balance: ${this.props.balance}</div>
-        <div className="wager">
+                <div className="wager">
           <WagerForm />
         </div>
         <br />
@@ -46,6 +42,8 @@ class Sidebar extends Component {
         <div>
           <b>Statistics</b>
           <br />
+          <div className="balance">Profit: ${this.props.balance}</div>
+
           Expected Value: $0
         </div>
         <div>ROI: {Math.round(this.props.roi * 100) / 100}%</div>

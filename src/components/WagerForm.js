@@ -11,7 +11,6 @@ class WagerForm extends React.Component {
   handleInputChange(event) {
     const target = event.target;
     const value = parseInt(target.value);
-    const name = target.name;
     this.props.setWager(value)    
   }
 
@@ -22,7 +21,7 @@ class WagerForm extends React.Component {
           Wager $
           <br />
           <input
-            defaultValue="50"
+            defaultValue="5000"
             name="wager"
             type="number"
             value={this.props.wager}
