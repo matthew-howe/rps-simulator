@@ -57,6 +57,10 @@ class Throw extends Component {
   render() {
     return (
       <div>
+        <button onClick={() => this.startSim()}>START SIMULATION</button>
+        <button onClick={() => this.stopSim()}>STOP SIMULATION</button>
+        <button onClick={() => this.props.reset()}>RESET</button>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <button id="1" onClick={() => this.props.throwHand('ROCK')}>
           ROCK
         </button>
@@ -66,12 +70,7 @@ class Throw extends Component {
         <button id="3" onClick={() => this.props.throwHand('SCISSORS')}>
           SCISSORS
         </button>
-        <br />
-        <br />
-        <button onClick={() => this.startSim()}>START SIMULATION</button>
-        <button onClick={() => this.stopSim()}>STOP SIMULATION</button>
-        <button onClick={() => this.props.reset()}>RESET</button>
-      </div>
+                      </div>
     );
   }
 }

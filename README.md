@@ -34,37 +34,22 @@
 
 11. ~~Change the graph to display the current profit per throw~~
 
-12. Add a ROI display
-13. Add a display for the total winning for each rock/paper/scissors
+12. ~~Add a ROI display~~
+13. ~~Add a display for the total winning for each rock/paper/scissors~~
 14. ~~Add lines to the graph for r/p/s winnings~~
-15. Add a standard deviation display
+15. ~~Add a standard deviation display~~
 16. ~~Add input forms for the CPU rock%/paper%/scissors%~~
-17. Adjust the CPU strategy to reflect the values in the forms
-18. Add a display for expected value
-19. Add a line to the graph to display expected value
-20. Add reset button / hand icons / clean up ui
+20. ~~Add reset button / hand icons~~
 21. ~~Add Simulate buttons that simulate games played~~
 22. ~~Add a buttonTo stop simulations~~
-
-
-
-### RPS Interface
-* hand icons
-* rock paper scissor buttons
-* score screen
-
-### Input Interface
-* total balance
-* wager amoount
-* opponent strategy controls
-
-### Graph Interface
-* profit
-* average roi
-* standard deviation
-* winnings with rock/paper/scissors
-* expected value
-
-### Extras
-* Opponent strategy presets
-* Different interface stylings
+23. Change the strategy forms to sliders
+17. Adjust the CPU strategy to reflect the values in the forms
+    * write a function to handle mixed strategies
+18. Add a display for expected value
+    * write a function that adds up the total thrown for each
+        * calculate the ev of our throw vs their strategy
+        *
+19. Add a line to the graph to display expected value
+24. Add a button to play vs machine learning ai
+    * on click disable the cpu forms
+    * employ a strategy that uses cfrm to learn

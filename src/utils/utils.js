@@ -8,3 +8,11 @@ export const standardDeviation = (arr) => {
   const stdDev = Math.sqrt(avgSquareDiff)
   return stdDev;
 }
+
+export const handHistory = (rock, paper, scissors) => {
+
+}
+
+export const expectedValue = (cRock, cPaper, cScissors, pRock, ppaper, pScissors, isSimulating) => {
+  
+}
