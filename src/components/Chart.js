@@ -14,11 +14,10 @@ class Chart extends React.Component {
       <div className="chart">
         <LineChart 
           data={[
-            // {"name":"Games Won", "data": this.props.chartData},
             {
               "name":"Total Winnings", "data": this.props.chartData,
-              "color": 'green', "points": false, "library": {"lineTension": 0}
-            },
+              "color": 'green', "points": false, "library": {"lineTension": 0},
+                          },
             {
               "name":"Rock Winnings", "data": this.props.chart.rockChart,
               "color": 'red', "points": false, "library": {"lineTension": 0}
@@ -35,8 +34,6 @@ class Chart extends React.Component {
           pointStyle={"line"}
           height={400}
           width={700}
-          // max={1000}
-          // min={-500}
           xtitle={"Games Played"}
           ytitle={"PROFIT"}
           prefix="$"
