@@ -6,6 +6,7 @@ import {
   setWager,
   autoThrow,
   setChart,
+  reset
 } from '../actions';
 
 class Throw extends Component {
@@ -26,7 +27,10 @@ class Throw extends Component {
         this.props.chartData,
         this.props.balance,
         this.props.wager,
-        this.props.gameHistory
+        this.props.gameHistory,
+        this.props.totalInvested,
+        this.props.resultHistory,
+        this.props.stdDevHistory
       );
     }
   }
@@ -66,6 +70,7 @@ class Throw extends Component {
         <br />
         <button onClick={() => this.startSim()}>START SIMULATION</button>
         <button onClick={() => this.stopSim()}>STOP SIMULATION</button>
+        <button onClick={() => this.props.reset()}>RESET</button>
       </div>
     );
   }
@@ -83,6 +88,9 @@ const mapStateToProps = state => ({
   balance: state.game.balance,
   gameHistory: state.game.gameHistory,
   chart: state.game.chart,
+  totalInvested: state.game.totalInvested,
+  resultHistory: state.game.resultHistory,
+  stdDevHistory: state.game.stdDevHistory
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -99,7 +107,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       chartData,
       balance,
       wager,
-      gameHistory
+      gameHistory,
+      totalInvested,
+      resultHistory,
+      stdDevHistory
     ) => {
       dispatch(
         setScores(
@@ -111,7 +122,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           chartData,
           balance,
           wager,
-          gameHistory
+          gameHistory,
+          totalInvested,
+          resultHistory,
+          stdDevHistory
         )
       );
     },
@@ -124,6 +138,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     setChart: (handType, gameHistory, chart, gamesPlayed) => {
       dispatch(setChart(handType, gameHistory, chart, gamesPlayed));
     },
+    reset: () => dispatch(reset()),
   };
 };
 

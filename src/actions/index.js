@@ -1,8 +1,11 @@
+import { standardDeviation } from '../utils/utils'
+
 const THROW = 'THROW';
 const SET_SCORES = 'SET_SCORES';
 const SET_WAGER = 'SET_WAGER';
 const SET_CHART = 'SET_CHART';
 const AUTO_THROW = 'AUTO_THROW';
+const RESET = 'RESET';
 
 export const throwHand = weapon => ({
   type: THROW,
@@ -14,6 +17,10 @@ export const autoThrow = () => ({
   type: AUTO_THROW,
 })
 
+export const reset = () => ({
+  type: RESET
+})
+
 export const setScores = (
   playerHand,
   cpuHand,
@@ -23,7 +30,10 @@ export const setScores = (
   chartData,
   balance,
   wager,
-  gameHistory
+  gameHistory,
+  totalInvested,
+  resultHistory,
+  stdDevHistory
 ) => {
   let newGameHistory = gameHistory;
   newGameHistory.push({
@@ -42,6 +52,8 @@ export const setScores = (
     newGameHistory[newGameHistory.length - 1].won = true;
     newGameHistory[newGameHistory.length - 1].tie = false;
     let newGamesPlayed = gamesPlayed + 1
+    resultHistory.push(wager);
+    stdDevHistory.push(1);
     return {
       type: SET_SCORES,
       playerScore: playerScore + 1,
@@ -54,6 +66,12 @@ export const setScores = (
       balance: balance + wager,
       gameHistory: newGameHistory,
       scoresSet: true,
+      totalInvested: totalInvested + wager,
+      roi: ((balance + wager) / (totalInvested + wager)) * 100,
+      resultHistory: resultHistory,
+      stdDevHistory: stdDevHistory,
+      standardDev: standardDeviation(resultHistory),
+      gameStandardDev: standardDeviation(stdDevHistory)
     };
   }
   if (
@@ -64,6 +82,8 @@ export const setScores = (
     let newGamesPlayed = gamesPlayed + 1
     newGameHistory[newGameHistory.length - 1].won = false;
     newGameHistory[newGameHistory.length - 1].tie = false;
+    resultHistory.push(-wager)
+    stdDevHistory.push(-1)
     return {
       type: SET_SCORES,
       playerScore: playerScore,
@@ -76,11 +96,18 @@ export const setScores = (
       balance: balance - wager,
       gameHistory: newGameHistory,
       scoresSet: true,
+      totalInvested: totalInvested + wager,
+      roi: ((balance - wager) / (totalInvested + wager)) * 100,
+      resultHistory: resultHistory,
+      stdDevHistory: stdDevHistory,
+      standardDev: standardDeviation(resultHistory),
+      gameStandardDev: standardDeviation(stdDevHistory)
     };
   }
   newGameHistory[newGameHistory.length - 1].won = false;
   newGameHistory[newGameHistory.length - 1].tie = true;
-  let newGamesPlayed = gamesPlayed + 1;
+  resultHistory.push(0);
+  stdDevHistory.push(0);
   return {
     type: SET_SCORES,
     playerScore: playerScore,
@@ -91,6 +118,12 @@ export const setScores = (
     balance: balance,
     gameHistory: newGameHistory,
     scoresSet: true,
+    totalInvested: totalInvested + wager,
+    roi: (balance / (totalInvested + wager)) * 100,
+    resultHistory: resultHistory,
+    stdDevHistory: stdDevHistory,
+    standardDev: standardDeviation(resultHistory),
+    gameStandardDev: standardDeviation(stdDevHistory)
   };
 };
 

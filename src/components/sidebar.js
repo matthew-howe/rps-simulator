@@ -48,11 +48,12 @@ class Sidebar extends Component {
           <br />
           Expected Value: $0
         </div>
-        <div>ROI: 0%</div>
-        <div>Standard Deviation: 0</div>
-        <div>Rock Winnings: $0</div>
-        <div>Paper Winnings: $0</div>
-        <div>Scissors Winnings: $0</div>
+        <div>ROI: {Math.round(this.props.roi * 100) / 100}%</div>
+        <div>Standard Deviation/$: {Math.round(this.props.standardDev * 100) / 100}</div>
+        <div>Standard Deviation/game: {Math.round(this.props.gameStandardDev * 100) / 100}</div>
+        <div>Rock Winnings: ${this.props.chart.rockChart[this.props.gamesPlayed]}</div>
+        <div>Paper Winnings: ${this.props.chart.paperChart[this.props.gamesPlayed]}</div>
+        <div>Scissors Winnings: ${this.props.chart.scissorsChart[this.props.gamesPlayed]}</div>
       </div>
     );
   }
@@ -66,7 +67,10 @@ const mapStateToProps = state => ({
   gameHistory: state.game.gameHistory,
   chart: state.game.chart,
   gamesPlayed: state.game.gamesPlayed,
-  scoresSet: state.game.scoresSet
+  scoresSet: state.game.scoresSet,
+  roi: state.game.roi,
+  standardDev: state.game.standardDev,
+  gameStandardDev: state.game.gameStandardDev,
 });
 
 const mapDispatchToProps = dispatch => ({
