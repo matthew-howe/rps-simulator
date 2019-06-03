@@ -1,3 +1,5 @@
+ ## Project pivoted to https://github.com/thetensorgroup/tensorpaperscissors
+ 
  Outline / TO DO
 1.  ~~add interface for Player hand and CPU hand~~
     * ~~Create a component that displays ROCK PAPER SCISSORS~~
