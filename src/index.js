@@ -16,6 +16,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <h1>Project pivoted to <a href="https://github.com/thetensorgroup/tensorpaperscissors">Tensor Paper Scissors</a></h1>
   <Provider store={configureStore()}>
     <App />, 
   </Provider>

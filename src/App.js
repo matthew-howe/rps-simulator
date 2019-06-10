@@ -14,6 +14,7 @@ class App extends Component {
         <Sidebar />
         <div className="game">
           
+          
           <br />
           <CpuHand />
           <br />
