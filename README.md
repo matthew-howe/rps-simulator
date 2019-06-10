@@ -1,5 +1,7 @@
  ## Project pivoted to https://github.com/thetensorgroup/tensorpaperscissors
  
+ ## Demo: http://rpssim.herokuapp.com/
+ 
 ![alt text](https://i.imgur.com/NPSCoyz.png)
  
  
